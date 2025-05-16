@@ -1,0 +1,14 @@
+.button {
+    background-color: black;
+    color: whitesmoke;
+    padding: 5px 20px;
+    border: solid whitesmoke;
+    font-size: large;
+    border-radius: 20px;
+}
+
+.button:hover {
+    background-color: whitesmoke;
+    color: black;
+    border: solid black;
+}
