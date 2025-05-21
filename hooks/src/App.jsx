@@ -1,15 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import "./App.css"
 
 function App() {
 
+  // variables con js
   let count1 = 0;//variable de JS
-  const [count2, setCount2] = useState(0); //variable de estado
- 
+  count1 = 10;
 
+  // variables con React
+  const [count2, setCount2] = useState(0); //variable de estado numero
+  //const [texto, setTexto] = useState(""); //variable texto
+  const [buleano, setBuleano] = useState(false);
+  //const [array, setArray] = useState([1,2,3,4])
+ 
   function handleCount () {
     count1++ //opcion 3  
     console.log('Count: '+ count1);
     setCount2(count2 + 1) //la cambiar esta variable se vuelve a renderizar la página
+  }
+
+  //la función que se debe ejecutar , [variable de estado de la que depende la acción]
+  useEffect(()=>{
+    if(count2 === 5){
+      alert('Has presionado el botón 5 veces')
+    }
+  }, [count2]);
+
+  // También pueden generar acciones la primera vez que se renderiza el componente
+  useEffect(()=>{
+    alert('Bienvenidos a Hooks con React');
+  }, []);
+
+
+  function handleStyle() {
+    setBuleano(!buleano)
   }
 
 
@@ -30,6 +54,10 @@ function App() {
         <h2>Contador de estado: {count2}</h2>
 
         <button onClick={handleCount}>Incrementar</button>
+
+        <h1 className= {buleano ? "color1" : "color2"}>titulo a cambiar</h1>
+        <button onClick={handleStyle}>Cambio de color</button>
+
       </section>
     </>
   )
