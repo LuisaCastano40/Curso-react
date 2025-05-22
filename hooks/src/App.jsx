@@ -38,8 +38,8 @@ function App() {
 
 
   return (
-    <>
-      <h1>Contador Reactivo con useState y con useEffect</h1>
+    <main className="bg-gray-800 text-white h-screen border border-white text-center">
+      <h1 className="text-[50px] font-bold mt-[50px]">Contador Reactivo con useState y con useEffect</h1>
       <p>Este es una práctica guiada, para entender los conceptos y usos de los Hooks useState y useEffect a partir de controlar el valor de un contador.
 
         <br />
@@ -49,17 +49,22 @@ function App() {
       </p>
 
 
-      <section>
+      <section className="border w-[200px] mx-auto my-[100px] p-[20px] rounded-[20px] ">
         <h2>Contador JS: {count1} </h2>
         <h2>Contador de estado: {count2}</h2>
 
         <button onClick={handleCount}>Incrementar</button>
 
         <h1 className= {buleano ? "color1" : "color2"}>titulo a cambiar</h1>
-        <button onClick={handleStyle}>Cambio de color</button>
+
+        <button className="" onClick={handleStyle}>Cambio de color</button>
 
       </section>
-    </>
+
+      <footer>
+        Practica guiada realizada por [sus nombres]
+      </footer>
+    </main>
   )
 }
 
