@@ -1,2 +1,6 @@
 /* Comentarios */
 /* Estilos principales - globales -se aplican en todo su proyecto */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

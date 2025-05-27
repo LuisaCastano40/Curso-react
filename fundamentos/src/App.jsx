@@ -39,7 +39,7 @@ export function App() {
     // Fragment -> cajita -> ponga el contenido de su componente y no genere ningun elemento en el DOM
     <>
       {/* comentario en la vista -html */}
-      <h1>Fundamentos de React</h1>
+      <h1 className='text-2xl text-red-600'>Fundamentos de React</h1>
       <p>Este espacio tendrá el contenido de la semana de introsucción a React.js</p>
 
       <p>Los temas que vamos a ir abordando son:</p>
