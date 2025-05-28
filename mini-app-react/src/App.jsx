@@ -12,10 +12,14 @@ export function App() {
       </header>
 
       <Routes>
-        <Route path="/"  element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/products" element={<Products/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
+
+      <footer>
+        Primer applicación con React - Luisa Castaño BIT 2025
+      </footer>
     </>
   )
 }
