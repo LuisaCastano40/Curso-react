@@ -3,9 +3,12 @@ import { Home } from "./pages/Home.jsx";
 import { About } from "./pages/About.jsx";
 import { Products } from "./pages/Products.jsx";
 import { NavBar } from "./components/NavBar.jsx";
+import { Footer } from "./components/Footer.jsx";
 
 export function App() {
+
   return (
+
     <>
       <header>
         <NavBar />
@@ -17,9 +20,7 @@ export function App() {
         <Route path="/products" element={<Products />} />
       </Routes>
 
-      <footer>
-        Primer applicación con React - Luisa Castaño BIT 2025
-      </footer>
+      <Footer />
     </>
   )
 }
