@@ -4,6 +4,7 @@ import { About } from "./pages/About.jsx";
 import { Products } from "./pages/Products.jsx";
 import { NavBar } from "./components/NavBar.jsx";
 import { Footer } from "./components/Footer.jsx";
+import { Login } from "./pages/Login.jsx";
 
 export function App() {
 
@@ -15,7 +16,8 @@ export function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
       </Routes>
