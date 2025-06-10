@@ -1,12 +1,30 @@
 import React from 'react'
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
+import { useUser } from '../context/UserContext';
 
 export function Login() {
+
+    const context = useUser(); //opcion 1 -> recomendado
+    // const {login} = useUser();  opción 2
+
     const onFinish = values => {
         console.log('Success:', values);
+        const {password, username} = values;
+        const success = context.login({parametro1 : username, parametro2 : password });
+
+        if(success){
+            // manejo de mensajes para el usuario preferido (modal de respuesta)
+            alert('Inicio de sesión exitoso')
+        } else {
+            alert('Credenciales incorrectas')
+        }
+
     };
+
+
     const onFinishFailed = errorInfo => {
         console.log('Failed:', errorInfo);
+        //modal de swwetAlert
     };
 
     return (

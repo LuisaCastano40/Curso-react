@@ -2,8 +2,11 @@
 import { NavLink, Link } from "react-router-dom"
 // import logo from "../assets/logo.png";
 import { Icon } from "@iconify/react";
+import { useUser } from "../context/UserContext";
 
 export function NavBar() {
+    const context = useUser();
+
     return (
         <>
             {/* 1. colores 2. tamaños 3. posicionamiento 4. agregados */}
@@ -27,6 +30,8 @@ export function NavBar() {
                         <Icon icon="pajamas:github" width={30} height={30} />
                     </Link>
                 </div>
+
+                <button onClick={context.logout}>Cerrar sesión</button>
             </nav>
         </>
     )

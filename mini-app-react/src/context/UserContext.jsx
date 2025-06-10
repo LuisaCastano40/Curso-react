@@ -16,13 +16,35 @@ export const UserProvider = ({children}) => {
     // variables y funciones que se van a acceder desde nuestros componentes
     const [user, setUser] = useState(null);
 
-    function login(){
-
+    function login({parametro1, parametro2}){
+        //find me encuentra el usuario y lo guarda en la variable
+        const userFound = users.find((user)=> user.username === parametro1 && user.password === parametro2 )
+        //si existe usuario en registro
+        if(userFound){
+            // localStorage solo guarda texto
+            localStorage.setItem('userLogged', JSON.stringify(userFound));
+            setUser(userFound);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function logout(){
-
+        localStorage.removeItem('userLogged');
+        setUser(null)
+        alert('Cierre de sesión exitoso') //por defecto js
     }
+
+    // Para poder mantener la sesión abierta
+    useEffect(
+        ()=>{
+            // localStorage me trae texto
+            const stored = JSON.parse(localStorage.getItem('userLogged'));
+            setUser(stored);
+
+        }, [] //cuando carge por primera vez mi página o componente
+    );
 
     return (
         <UserContext.Provider value={{user, login, logout}}>
